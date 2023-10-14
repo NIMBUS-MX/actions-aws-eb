@@ -8,7 +8,8 @@ RUN apt-get update -y
 
 RUN pip install "pyyaml<5.4"
 
-RUN pip install --upgrade pip awsebcli
+RUN git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
+RUN python ./aws-elastic-beanstalk-cli-setup/scripts/ebcli_installer.py
 
 RUN chmod +x entrypoint.sh
 
